@@ -16,12 +16,12 @@ class EmployeeSalary:
             self.email = f"{self.name}@email.com"
         return self.email
     
-    @staticmethod
-    def set_hourly_payment(new_hourly_payment):
-        EmployeeSalary.hourly_payment = new_hourly_payment
+    @classmethod
+    def set_hourly_payment(cls, new_hourly_payment):
+        cls.hourly_payment = new_hourly_payment
 
     def salary(self):
-        return self.get_hours() * EmployeeSalary.hourly_payment
+        return self.get_hours() * self.hourly_payment
     
 # Пример:
 EmployeeSalary.set_hourly_payment(350)
